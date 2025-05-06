@@ -33,10 +33,17 @@ export default async function sendRequest(url, method = 'GET', body = null, toke
 
     try {
         const res = await fetch(cleanedUrl, options)
+
+        if (res.status === 204) {
+            // No Content response (e.g., DELETE success)
+            return null
+        }
+
         if (!res.ok) {
             const errorData = await res.json().catch(() => ({}))
             throw new Error(errorData.error || `Request failed with status ${res.status}`)
         }
+
         return await res.json()
     } catch (err) {
         console.error(`❌ API ${method} ${cleanedUrl} failed:`, err)

@@ -23,9 +23,9 @@ export default function LoginPage() {
 
             // ⏳ Small delay to make sure context updates before navigating
             setTimeout(() => {
-                if (userData.user_type === 'admin') navigate('/admin')
-                else if (userData.user_type === 'engineer') navigate('/engineer')
-                else if (userData.user_type === 'nurse') navigate('/nurse')
+                if (userData.user_type === 'admin') navigate('/dashboard/admin')
+                else if (userData.user_type === 'engineer') navigate('/dashboard/engineer')
+                else if (userData.user_type === 'nurse') navigate('/dashboard/nurse')
                 else setError('Unknown user type.')
             }, 0)
         } catch (err) {
