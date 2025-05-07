@@ -14,18 +14,27 @@ import DeviceIndexPage from '../Device/DeviceIndexPage'
 import DeviceFormPage from '../Device/DeviceFormPage'
 import DashboardRedirect from '../../components/Dashboard/DashboardRedirect'
 import Navbar from '../../components/Shared/Navbar'
+import Footer from '../../components/Shared/Footer'
 import WorkOrderIndexPage from '../WorkOrder/WorkOrderIndexPage'
 import WorkOrderFormPage from '../WorkOrder/WorkOrderFormPage'
 import WorkOrderDetailPage from '../WorkOrder/WorkOrderDetailPage'
 import SparePartIndexPage from '../SparePart/SparePartIndexPage'
 import SparePartFormPage from '../SparePart/SparePartFormPage'
 import SparePartDetailPage from '../SparePart/SparePartDetailPage'
+import EngineerOpenWorkOrdersPage from '../WorkOrder/EngineerOpenWorkOrdersPage'
+import NurseOpenWorkOrdersPage from '../WorkOrder/NurseOpenWorkOrdersPage'
+import NurseClosedWorkOrdersPage from '../WorkOrder/NurseClosedWorkOrdersPage'
 
 function LayoutWithNavbar() {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <div className="min-h-screen flex flex-col justify-between">
+        <div className="flex-grow">
+          <Outlet />
+        </div>
+        <Footer />
+      </div>
     </>
   )
 }
@@ -43,7 +52,7 @@ function App() {
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/login" element={<LoginPage />} />
 
-      {/* Protected Routes with Navbar */}
+      {/* Protected Routes with Navbar and Footer */}
       {isNavbarVisible && (
         <Route path="/" element={<LayoutWithNavbar />}>
           {/* Dashboard */}
@@ -88,6 +97,11 @@ function App() {
           <Route path="spareparts" element={<ProtectedRoute allowedRoles={['admin', 'engineer']}><SparePartIndexPage /></ProtectedRoute>} />
           <Route path="spareparts/new" element={<ProtectedRoute allowedRoles={['engineer']}><SparePartFormPage /></ProtectedRoute>} />
           <Route path="spareparts/:id" element={<ProtectedRoute allowedRoles={['admin', 'engineer']}><SparePartDetailPage /></ProtectedRoute>} />
+          
+          {/* opened/close W.O */}
+          <Route path="/workorders/open" element={<EngineerOpenWorkOrdersPage />} />
+          <Route path="/workorders/nurse/open" element={<NurseOpenWorkOrdersPage />} />
+          <Route path="/workorders/nurse/closed" element={<NurseClosedWorkOrdersPage />} />
         </Route>
       )}
     </Routes>

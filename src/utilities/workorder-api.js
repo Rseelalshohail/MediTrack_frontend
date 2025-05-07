@@ -9,9 +9,23 @@ export async function getAllWorkOrders(token, userType) {
     return sendRequest(url, 'GET', null, token)
 }
 
-export async function createWorkOrder(data, token) {
-    return sendRequest(BASE_URL, 'POST', data, token)
+export async function createWorkOrder(formData, token) {
+    const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/workorders/`, {
+        method: 'POST',
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+        body: formData
+    })
+
+    if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}))
+        throw new Error(errorData?.non_field_errors?.[0] || 'Failed to create work order.')
+    }
+
+    return res.json()
 }
+
 
 export async function getWorkOrderById(id, token) {
     return sendRequest(`${BASE_URL}${id}/`, 'GET', null, token)

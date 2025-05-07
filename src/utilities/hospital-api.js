@@ -17,3 +17,7 @@ export async function createHospital(data, token) {
 export async function updateHospital(id, data, token) {
     return sendRequest(`${ENDPOINT}${id}/`, 'PUT', data, token)
 }
+
+export async function deleteHospital(id, token) {
+    return sendRequest(`/hospitals/${id}/`, 'DELETE', null, token)
+}

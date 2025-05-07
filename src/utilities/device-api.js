@@ -34,4 +34,7 @@ export async function getAssignedDevices(token) {
     return sendRequest('/devices/assigned/', 'GET', null, token)
 }
 
+export async function deleteDevice(id, token) {
+    return sendRequest(`/devices/${id}/`, 'DELETE', null, token)
+}
 

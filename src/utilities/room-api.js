@@ -17,3 +17,7 @@ export async function createRoom(data, token) {
 export async function updateRoom(id, data, token) {
     return sendRequest(`${ENDPOINT}${id}/`, 'PUT', data, token)
 }
+
+export async function deleteRoom(id, token) {
+    return sendRequest(`/rooms/${id}/`, 'DELETE', null, token)
+}
