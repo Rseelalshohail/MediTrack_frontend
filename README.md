@@ -84,3 +84,23 @@ $ docker compose up --build
 ## 🔍 Web UI Screenshots
 **Sign up page**
 ![alt text](image.png)
+**Login page**
+![alt text](image-1.png)
+**Admin Dashboard**
+![alt text](image-2.png)
+**Engineer Dashboard**
+![alt text](image-3.png)
+**Spare part request form**
+![alt text](image-4.png)
+**Nurse Dashboard**
+![alt text](image-5.png)
+**Create new work order form**
+![alt text](image-6.png)
+
+## 🧋 IceBox Features
+
+- Email reminders for overdue work orders  
+- Multi-language support
+- Work order priority levels
+- Ability to export PDF reports for work orders  
+- Dark mode toggle
