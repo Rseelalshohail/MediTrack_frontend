@@ -110,7 +110,7 @@ $ docker compose up --build
 ![alt text](image-6.png)
 
 
-## 🧋 IceBox Features
+## 🧊 IceBox Features
 
 - Email reminders for overdue work orders  
 - Multi-language support
