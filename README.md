@@ -82,26 +82,33 @@ $ docker compose up --build
 - As a Nurse, I want to view work orders created by me.
 
 ## 🔍 Web UI Screenshots
-**Sign up page**
+**🔹 Sign up page**
 ![alt text](image.png)
 
-**Login page**
+
+**🔹 Login page**
 ![alt text](image-1.png)
 
-**Admin Dashboard**
+
+**🔹 Admin Dashboard**
 ![alt text](image-2.png)
 
-**Engineer Dashboard**
+
+**🔹 Engineer Dashboard**
 ![alt text](image-3.png)
 
-**Spare part request form**
+
+**🔹 Spare part request form**
 ![alt text](image-4.png)
 
-**Nurse Dashboard**
+
+**🔹 Nurse Dashboard**
 ![alt text](image-5.png)
 
-**Create new work order form**
+
+**🔹 Create new work order form**
 ![alt text](image-6.png)
+
 
 ## 🧋 IceBox Features
 
